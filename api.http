@@ -1,0 +1,36 @@
+### Mostrar todas las películas
+GET http://localhost:1234/movies
+
+### Buscar por ID
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### Buscar por género
+GET http://localhost:1234/movies?genre=drama
+
+### Buscar por género con paginación
+GET http://localhost:1234/movies/1?genre=drama
+
+### Añadir una película 
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title": "Inception",
+    "year": 2024,
+    "director": "Christopher Nolan",
+    "duration": 123,
+    "poster": "https://m.media-amazon.com/images/I/91Rc8cAmnAL._AC_UF1000,1000_QL80_.jpg",
+    "genre": ["Action", "Adventure", "Sci-Fi"]
+}
+
+### Actualizar una película
+PATCH http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+Content-Type: application/json
+
+{
+    "title": "Inceptionnnnnn"
+}
+
+// POST: CREAR NUEVO ELEMENTO                           /movies
+// PUT: ACTUALIZAR COMPLETAMENTE Y SINO EXISTE CREARLO  /movies/:id
+// PATCH: ACTUALIZAR PARCIALMENTE                       /movies/:id
